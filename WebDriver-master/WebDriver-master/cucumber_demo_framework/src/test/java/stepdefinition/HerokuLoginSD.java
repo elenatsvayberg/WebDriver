@@ -32,8 +32,8 @@ public class HerokuLoginSD {
         herokulogin.submit();
     }
 
-    @Then("^I verify (.+) button is displayed$")
-    public void verifyLogoutButtondisplayed(String Logout){
-        Assert.assertEquals(herokulogin.verifyLogoutButtondisplayed(Logout), Logout,"Wrong option");
-    }
+//    @Then("^I verify (.+) button is displayed$")
+//    public void verifyLogoutButtondisplayed(String Logout){
+//        Assert.assertEquals(herokulogin.verifyLogoutButtondisplayed(Logout), Logout,"Wrong option");
+//    }
 }
