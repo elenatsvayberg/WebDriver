@@ -39,7 +39,8 @@ public class MobileHomeSD {
 
     @Then("^I verify all options are enabled$")
     public void verifyAllOptionSelected(){
-        Assert.assertTrue(homePage.verifyAllOptionsSelected());
+       // Assert.assertTrue(homePage.verifyAllOptionsSelected());
+        homePage.verifyAllOptionsSelected();
     }
 
     //FA2-107

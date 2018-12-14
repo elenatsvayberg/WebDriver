@@ -24,8 +24,11 @@ public class HomePage extends MobileBasePage {
     @AndroidFindBy(xpath = "//android.widget.CheckBox")
     private MobileElement checkboxes;
 
-    @AndroidFindBy(xpath = "//android.webkit.WebView/android.view.View[@content-desc='Angular']//following-sibling::android.widget.CheckBox")
-    private MobileElement allCheckBoxes;
+//  @AndroidFindBy(xpath = "//android.webkit.WebView/android.view.View[@content-desc='Angular']//following-sibling::android.widget.CheckBox")
+//  private MobileElement allCheckBoxes;
+
+    @AndroidFindBy(xpath = "//android.webkit.WebView/android.view.View[@content-desc=‘Angular’]//following-sibling::android.widget.CheckBox")
+    private List<MobileElement> toggleSwitch;
 
     @AndroidFindBy(xpath = "//android.webkit.WebView/android.view.View/android.widget.Button[@content-desc='CONTINUE arrow forward ']")
     private MobileElement continueButton;
@@ -50,14 +53,15 @@ public class HomePage extends MobileBasePage {
         Thread.sleep(1000);
     }
 
-    public boolean verifyAllOptionsSelected(){
+    public void verifyAllOptionsSelected(){
 //        boolean enabled = false;
 //        List<MobileElement> myElements = AppiumWrapper.getAppiumDriver().findElementsByXPath("//android.webkit.WebView/android.view.View[@content-desc='Angular']//following-sibling::android.widget.CheckBox");
 //        for(MobileElement e : myElements) {
 //            enabled = isElementEnabled(e);
 //        }
 //        return enabled;
-       return isElementSelected(allCheckBoxes);
+       //return isElementSelected(allCheckBoxes);
+        clickOnElement(toggleSwitch);
     }
 
     public void swipeTutorialslides(int num) throws InterruptedException {

@@ -97,20 +97,33 @@ public class MobileBasePage{
      * @param mobileElement
      * @return
      */
-    protected boolean isElementSelected(MobileElement mobileElement)
-    {
-        try
-        {
-            List<MobileElement> myElements = AppiumWrapper.getAppiumDriver().findElementsByXPath("mobileElement");
-            for(MobileElement e : myElements) {
-                System.out.println("Element is selected" +e.isSelected());
-               return true;
+//    protected boolean isElementSelected (MobileElement mobileElement) {
+//        try
+//        {
+//            List<MobileElement> myElements = AppiumWrapper.getAppiumDriver().findElementsByXPath("mobileElement");
+//            for(MobileElement e : myElements) {
+//                System.out.println("Element is selected" +e.isSelected());
+//               return true;
+//            }
+//        } catch (NoSuchElementException ignored) {
+//            System.out.println("Element not found");
+//            return false;
+//        }
+//        return true;
+//    }
+
+    public void clickOnElement(List<MobileElement> toggleSwitch) {
+        List<MobileElement> elementsOne = toggleSwitch;
+        int i=0;
+        for (MobileElement e : elementsOne) {
+            i+=1;
+            System.out.println("Element is selected " + e.isSelected() +"other" + e.getAttribute(""));
+
+            if (i==1)
+            {
+                break;
             }
-        } catch (NoSuchElementException ignored) {
-            System.out.println("Element not found");
-            return false;
         }
-        return true;
     }
 
 }
