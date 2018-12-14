@@ -1,14 +1,16 @@
 package framework;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.PageFactory;
 import stepdefinition.SharedSD;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class MobileBasePage {
+public class MobileBasePage{
 
     /**
      * This is a constructor which initializes initPageElements()
@@ -72,4 +74,56 @@ public class MobileBasePage {
         return isDisplayed;
         //return false;
     }
+
+    /**
+     * This method is used to verify if element is enabled
+     * @param mobileElement
+     * @return
+     */
+    protected boolean isElementEnabled(MobileElement mobileElement){
+        boolean isEnabled;
+        try {
+            isEnabled = mobileElement.isEnabled();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            throw new NoSuchElementException("Unable to locate the Element using: " + mobileElement.toString());
+        }
+        return isEnabled;
+    }
+
+
+    /**
+     * This method is used to verify if elements are selected
+     * @param mobileElement
+     * @return
+     */
+//    protected boolean isElementSelected (MobileElement mobileElement) {
+//        try
+//        {
+//            List<MobileElement> myElements = AppiumWrapper.getAppiumDriver().findElementsByXPath("mobileElement");
+//            for(MobileElement e : myElements) {
+//                System.out.println("Element is selected" +e.isSelected());
+//               return true;
+//            }
+//        } catch (NoSuchElementException ignored) {
+//            System.out.println("Element not found");
+//            return false;
+//        }
+//        return true;
+//    }
+
+    public void clickOnElement(List<MobileElement> toggleSwitch) {
+        List<MobileElement> elementsOne = toggleSwitch;
+        int i=0;
+        for (MobileElement e : elementsOne) {
+            i+=1;
+            System.out.println("Element is selected " + e.isSelected() +"other" + e.getAttribute(""));
+
+            if (i==1)
+            {
+                break;
+            }
+        }
+    }
+
 }

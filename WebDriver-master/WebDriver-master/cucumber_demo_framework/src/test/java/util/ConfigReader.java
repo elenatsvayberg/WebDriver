@@ -16,6 +16,12 @@ public class ConfigReader {
     private String platform;
     private String version;
 
+    private String mobileAutomationName;
+    private String platformName;
+    private String mobileDeviceName;
+    private String mobileAppPath;
+    private String mobileVersion;
+
     public ConfigReader() {
 
         Properties prop = new Properties();
@@ -37,6 +43,14 @@ public class ConfigReader {
             this.sauceBrowser = prop.getProperty("browser");
             this.platform = prop.getProperty("platform");
             this.version = prop.getProperty("version");
+
+            //mobile
+            this.mobileAutomationName = prop.getProperty("mobileAutomationName");
+            this.platformName = prop.getProperty("platformName");
+            this.mobileDeviceName = prop.getProperty("mobileDeviceName");
+            this.mobileAppPath = prop.getProperty("mobileAppPath");
+            this.mobileVersion = prop.getProperty("mobileVersion");
+
 
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -83,5 +97,24 @@ public class ConfigReader {
 
     public String getVersion() {
         return version;
+    }
+
+    public String getMobileAutomationName() {
+        return mobileAutomationName;
+    }
+    public String getMobilePlatformName() {
+        return platformName;
+    }
+
+    public String getMobileDeviceName(){
+        return mobileDeviceName;
+    }
+
+    public String getMobileAppPath(){
+        return mobileAppPath;
+    }
+
+    public String getMobileVersion(){
+        return mobileVersion;
     }
 }

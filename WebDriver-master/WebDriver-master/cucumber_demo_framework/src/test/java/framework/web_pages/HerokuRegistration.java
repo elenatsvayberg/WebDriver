@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.testng.Assert;
 import stepdefinition.SharedSD;
-import sun.nio.ch.sctp.SendFailed;
 
 public class HerokuRegistration extends BasePage {
 

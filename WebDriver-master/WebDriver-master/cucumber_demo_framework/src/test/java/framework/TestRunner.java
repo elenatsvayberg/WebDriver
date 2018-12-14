@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         //Path to your feature file
         features = {"src/test/resources/features"},
         // Specify tags to be executed
-        tags = {"@mobile-login-2"},
+        //tags = {"@mobile-login-2"},
         //tags = {"@hotel-search-1"},
         //tags = {"@darksky-verifytemp"},
         //tags = {"@darksky-regression"},
@@ -26,6 +26,8 @@ import org.junit.runner.RunWith;
         //tags = {"@heroku-email"},
         //tags = {"@darksky-todaysdate"},
         //tags = {"@heroku-check"},
+        tags = {"@mobile-home-reset"},
+        //tags = {"@mobile-home-slide"},
         //Specify step definition package name (Note: make sure to have this package on current directory)
         glue = {"stepdefinition"}
 )
